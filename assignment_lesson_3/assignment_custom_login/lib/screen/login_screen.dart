@@ -1,3 +1,5 @@
+import 'package:assignment_custom_login/screen/berhasil_screen.dart';
+import 'package:assignment_custom_login/screen/gagal_screen.dart';
 import 'package:assignment_custom_login/screen/menu_screen.dart';
 import 'package:assignment_custom_login/screen/widget/global_button.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,8 @@ import 'package:flutter/material.dart';
 class LoginScreen extends StatelessWidget {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passController = TextEditingController();
+  var email;
+  var password;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -45,10 +49,7 @@ class LoginScreen extends StatelessWidget {
                 GlobalButton(
                   title: 'Login',
                   onTap: (){
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MenuScreen(
-
-                      )));
+                        login(context);
                   },
                 )
               ],
@@ -56,5 +57,22 @@ class LoginScreen extends StatelessWidget {
           ),
       ),
     );
+  }
+
+  void login(context){
+    email = _emailController.text;
+    password = _passController.text;
+    // email == ('admin') && password == ('1234')
+    // ?Navigator.push(context, MaterialPageRoute(builder: (context) => MenuScreen()))
+    // :Navigator.push(context, MaterialPageRoute(builder: (context) => MenuScreen()));
+    if (email == ('admin') && password == ('1234')){
+      print('login berhasil');
+      Navigator.push(context, MaterialPageRoute(builder: (context) => BerhasilScreen(
+      )));
+    } else {
+      print('login Gagal');
+      Navigator.push(context, MaterialPageRoute(builder: (context) => GagalScreen(
+      )));
+    }
   }
 }

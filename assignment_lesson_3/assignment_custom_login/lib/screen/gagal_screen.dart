@@ -2,16 +2,13 @@ import 'package:assignment_custom_login/screen/shared/material.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class MenuScreen extends StatelessWidget {
-  final String title;
-
-  const MenuScreen({Key key, this.title}) : super(key: key);
+class GagalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
+      return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        title: Text('gagal'),
         centerTitle: true,
       ),
       body: Center(
@@ -25,7 +22,7 @@ class MenuScreen extends StatelessWidget {
             SizedBox(
               height: 8,
             ),
-            Text ('Status Login')
+            Text ('Login Gagal')
           ],
         ),
       ),
