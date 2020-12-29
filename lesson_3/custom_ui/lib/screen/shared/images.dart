@@ -1,0 +1,1 @@
+const String underCons = 'assets/lottie/under_cons.json';
